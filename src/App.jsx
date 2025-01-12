@@ -12,8 +12,12 @@ const App = () => {
     setMessages((prev) => [...prev, newMessage]);
 
     try {
-      const response = await axios.post("https://chatbot-backend-opal.vercel.app/chat", {
-        message: userMessage,
+      const response = await axios.post("https://chatbot-backend-six-psi.vercel.app/chat", {
+        message: userMessage},
+    {
+      headers: {
+        "Content-Type": "application/json", // Ensures JSON data is sent
+      },
       });
 
       const botResponse = "something went wrong!";
